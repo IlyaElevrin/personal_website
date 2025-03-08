@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Резюме</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/cvg" href="avatar.jpg">
+</head>
+<body>
+    <!-- Плавающая панель навигации -->
+    <nav class="navbar">
+        <div class="navbar-content">
+            <!-- Аватарка -->
+            <div class="avatar">
+                <img src="avatar.jpg" alt="Аватар">
+            </div>
+            <!-- Навигация -->
+            <ul class="nav-links">
+                <li><a href="#about">Обо мне</a></li>
+                <li><a href="#books">Книги</a></li>
+                <li><a href="#courses">Курсы</a></li>
+                <li><a href="#projects">Проекты</a></li>
+                <li><a href="#hobbies">Хобби</a></li>
+            </ul>
+            <!-- Переключатель темы и языков -->
+            <div class="settings">
+                <select id="theme-switcher">
+                    <option value="light">Светлая тема</option>
+                    <option value="dark">Темная тема</option>
+                </select>
+                <select id="language-switcher">
+                    <option value="ru">Русский</option>
+                    <option value="en">English</option>
+                    <option value="el">Ελληνικά</option>
+                </select>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Контент страницы -->
+    <div class="content">
+        <section id="about">
+            <h1>Обо мне</h1>
+            <p>Здесь информация обо мне.</p>
+        </section>
+        <section id="books">
+            <h1>Книги</h1>
+            <p>Здесь список книг, которые я прочитал.</p>
+        </section>
+        <section id="courses">
+            <h1>Курсы</h1>
+            <p>Здесь список курсов, которые я прошел.</p>
+        </section>
+        <section id="projects">
+            <h1>Проекты</h1>
+            <p>Здесь список моих проектов.</p>
+        </section>
+        <section id="hobbies">
+            <h1>Хобби</h1>
+            <p>Здесь информация о моих хобби.</p>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
