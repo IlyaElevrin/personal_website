@@ -18,8 +18,9 @@
             <!-- Навигация -->
             <ul class="nav-links">
                 <li><a href="#about">Обо мне</a></li>
+                <li><a href="#about">Опыт</a></li>
                 <li><a href="#books">Книги</a></li>
-                <li><a href="#courses">Курсы</a></li>
+                <li><a href="#courses">Обучение</a></li>
                 <li><a href="#projects">Проекты</a></li>
                 <li><a href="#hobbies">Хобби</a></li>
             </ul>
@@ -36,26 +37,32 @@
 
     <!-- Контент страницы -->
     <div class="content">
-        <section id="about">
-            <h1>Обо мне</h1>
-            <p>Здесь информация обо мне.</p>
-        </section>
-        <section id="books">
-            <h1>Книги</h1>
-            <p>Здесь список книг, которые я прочитал.</p>
-        </section>
-        <section id="courses">
-            <h1>Курсы</h1>
-            <p>Здесь список курсов, которые я прошел.</p>
-        </section>
-        <section id="projects">
-            <h1>Проекты</h1>
-            <p>Здесь список моих проектов.</p>
-        </section>
-        <section id="hobbies">
-            <h1>Хобби</h1>
-            <p>Здесь информация о моих хобби.</p>
-        </section>
+        <div class="content-background">
+            <section id="about">
+                <h1>Добро пожаловать в мое <span style="color: #007BFF;"> web резюме</span>.</h1>
+                <h1>Тут основная информация <span style="color: #007BFF;">обо мне</span>,</h1>
+                <h2>Она позволит вам ознакомиться со мной.</h2>
+                <h3>Мое резюме в <a href="https://vk.com" style="color: #007BFF; text-decoration: none;">PDF</a>, на <a href="https://hh.ru" style="color: #007BFF; text-decoration: none;">HH.ru</a> и <a href="https://linked.in" style="color: #007BFF; text-decoration: none;">Linkedin</a></h3>
+            </section>
+            <!-- Добавить после секции about -->
+            <section id="social" class="social-links">
+                <a href="https://t.me/your_username" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.941z" fill="currentColor"/></svg>
+                </a>
+                <a href="mailto:your.email@gmail.com" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M12 12.713l-11.985-9.713h23.97l-11.985 9.713zm0 2.574l-12-9.725v15.438h24v-15.438l-12 9.725z" fill="currentColor"/></svg>
+                </a>
+                <a href="https://linkedin.com/in/your-profile" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" fill="currentColor"/></svg>
+                </a>
+                <a href="https://kaggle.com/your-profile" target="_blank">
+                    <img src="img/kaggle.svg" alt="Kaggle">
+                </a>
+                <a href="https://habr.com/your-profile" target="_blank">
+                    <img src="img\habr.svg" alt="Habr" class="social-icon">
+                </a>
+            </section>
+        </div>
     </div>
 
     <canvas id="neuralCanvas"></canvas>
