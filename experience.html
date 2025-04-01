@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Опыт работы | Ilya Chugynov</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/cvg" href="avatar.jpg">
+</head>
+<body>
+    <!-- Навбар -->
+    <nav class="navbar">
+        <div class="navbar-content">
+            <a href="index.html" class="avatar">
+                <img src="avatar.jpg" alt="Аватар">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="about.html">Обо мне</a></li>
+                <li><a href="experience.html">Опыт</a></li>
+                <li><a href="books.html">Книги</a></li>
+                <li><a href="education.html">Обучение</a></li>
+                <li><a href="index.html#projects">Проекты</a></li>
+                <li><a href="index.html#hobbies">Хобби</a></li>
+            </ul>
+            <div class="settings">
+                <select id="language-switcher">
+                    <option value="ru">Русский</option>
+                    <option value="en">English</option>
+                    <option value="el">Ελληνικά</option>
+                </select>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Контент страницы -->
+    <div class="content">
+        <div class="content-background">
+            <section class="experience-section">
+                <h1>Опыт работы</h1>
+                
+                <div class="experience-timeline">
+                    <!-- Первая организация -->
+                    <div class="experience-card">
+                        <div class="experience-header">
+                            <h2 class="company-name">
+                                <a href="https://company1.com" target="_blank">ТехноСофт</a>
+                            </h2>
+                            <span class="work-period">Июнь 2020 - Настоящее время</span>
+                        </div>
+                        <div class="position">Старший веб-разработчик</div>
+                        <div class="achievements">
+                            <h3>Достижения:</h3>
+                            <ul>
+                                <li>Разработал и внедрил новую систему управления контентом</li>
+                                <li>Оптимизировал производительность сайта, что привело к увеличению скорости загрузки на 40%</li>
+                                <li>Руководил командой из 3 разработчиков</li>
+                            </ul>
+                        </div>
+                        <div class="responsibilities">
+                            <h3>Обязанности:</h3>
+                            <ul>
+                                <li>Разработка и поддержка клиентской части веб-приложений</li>
+                                <li>Интеграция с REST API</li>
+                                <li>Оптимизация кода и решение сложных технических задач</li>
+                                <li>Код-ревью и менторинг младших разработчиков</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Вторая организация -->
+                    <div class="experience-card">
+                        <div class="experience-header">
+                            <h2 class="company-name">
+                                <a href="https://company2.com" target="_blank">ДизайнВеб</a>
+                            </h2>
+                            <span class="work-period">Март 2018 - Май 2020</span>
+                        </div>
+                        <div class="position">Frontend-разработчик</div>
+                        <div class="achievements">
+                            <h3>Достижения:</h3>
+                            <ul>
+                                <li>Создал 15+ адаптивных веб-сайтов для клиентов компании</li>
+                                <li>Разработал внутреннюю систему компонентов, сократив время разработки на 25%</li>
+                                <li>Получил награду "Сотрудник месяца" 3 раза</li>
+                            </ul>
+                        </div>
+                        <div class="responsibilities">
+                            <h3>Обязанности:</h3>
+                            <ul>
+                                <li>Верстка по макетам Figma/Photoshop</li>
+                                <li>Разработка интерактивных элементов на JavaScript</li>
+                                <li>Тестирование и исправление багов</li>
+                                <li>Коммуникация с дизайнерами и заказчиками</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <canvas id="neuralCanvas"></canvas>
+    
+    <!-- Подключаем скрипты -->
+    <script src="script.js"></script>
+</body>
+</html>

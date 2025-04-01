@@ -313,3 +313,168 @@ h1 {
         grid-template-columns: 1fr;
     }
 }
+
+/* Стили для страницы "Опыт работы" */
+.experience-section {
+    padding: 20px;
+}
+
+.experience-timeline {
+    margin-top: 40px;
+}
+
+.experience-card {
+    background: rgba(68, 68, 68, 0.5);
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 123, 255, 0.1);
+}
+
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.company-name a {
+    color: #007BFF;
+    text-decoration: none;
+    font-size: 1.5em;
+    transition: color 0.3s;
+}
+
+.company-name a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.work-period {
+    background: rgba(0, 123, 255, 0.2);
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.9em;
+}
+
+.position {
+    font-style: italic;
+    color: #aaa;
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+.achievements, .responsibilities {
+    margin-bottom: 20px;
+}
+
+.achievements h3, .responsibilities h3 {
+    color: #007BFF;
+    margin-bottom: 10px;
+}
+
+.achievements ul, .responsibilities ul {
+    padding-left: 20px;
+}
+
+.achievements li, .responsibilities li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+    .experience-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .experience-card {
+        padding: 15px;
+    }
+}
+
+/* Стили для страницы "Обучение" */
+.education-section {
+    padding: 20px;
+}
+
+.certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.certificate-card {
+    background: rgba(68, 68, 68, 0.5);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.certificate-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 123, 255, 0.2);
+}
+
+.certificate-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    height: 100%;
+}
+
+.certificate-image-container {
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.certificate-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.certificate-card:hover .certificate-image {
+    transform: scale(1.05);
+}
+
+.certificate-info {
+    padding: 20px;
+}
+
+.certificate-info h3 {
+    margin: 0 0 10px 0;
+    color: #fff;
+}
+
+.issuer {
+    color: #aaa;
+    font-size: 0.9em;
+    margin: 0 0 5px 0;
+}
+
+.date {
+    color: #007BFF;
+    font-size: 0.8em;
+    margin: 0;
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+    .certificates-grid {
+        grid-template-columns: 1fr;
+    }
+}

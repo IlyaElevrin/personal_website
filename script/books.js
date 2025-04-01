@@ -2,16 +2,22 @@
 const booksData = {
     "books": [
       {
-        "title": "Искусственный интеллект. Современный подход",
-        "author": "Стюарт Рассел, Питер Норвиг",
-        "cover": "script/img/kagura-powering-up1.png",
-        "categories": ["AI", "Программирование"]
+        "title": "Machine learning for absolute beginners",
+        "author": "Oliver Theobald",
+        "cover": "script/img/books/machin learning oliver.jpg",
+        "categories": ["Ml", "Development"]
       },
       {
-        "title": "Чистый код",
-        "author": "Роберт Мартин",
-        "cover": "script/img/Mirajane Strauss Wallpaper Image.jpg",
-        "categories": ["Программирование"]
+        "title": "Статистика и котики",
+        "author": "Владимир Савельев",
+        "cover": "script/img/books/stat on cats.jpg",
+        "categories": ["Math", "Ml"]
+      },
+      {
+        "title": "Погружение в аналитику данных. От Excel к Python и R",
+        "author": "Джордж Маунт",
+        "cover": "script/img/books/data analytics excel.jpg",
+        "categories": ["Data", "Math"]
       }
     ]
   };

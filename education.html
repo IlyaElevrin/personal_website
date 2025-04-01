@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Книги | Ilya Chugynov</title>
+    <title>Обучение | Ilya Chugynov</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/cvg" href="avatar.jpg">
 </head>
 <body>
-    <!-- Навбар (копия из index.html) -->
+    <!-- Навбар -->
     <nav class="navbar">
         <div class="navbar-content">
             <a href="index.html" class="avatar">
@@ -33,15 +33,13 @@
         </div>
     </nav>
 
-    <!-- Контент страницы книг -->
+    <!-- Контент страницы -->
     <div class="content">
         <div class="content-background">
-            <div class="network-visualization">
-                <h2>Связи по категориям</h2>
-                <canvas id="booksCanvas"></canvas>
-            </div>
-            <h1>Моя библиотека</h1>
-            <div id="books-container" class="books-grid"></div>
+            <section class="education-section">
+                <h1>Мои сертификаты и курсы</h1>
+                <div id="certificates-container" class="certificates-grid"></div>
+            </section>
         </div>
     </div>
 
@@ -49,6 +47,6 @@
     
     <!-- Подключаем скрипты -->
     <script src="script.js"></script>
-    <script src="script/books.js"></script>
+    <script src="script/education.js"></script>
 </body>
 </html>
