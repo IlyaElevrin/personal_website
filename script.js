@@ -105,7 +105,7 @@ function animate() {
         
         // Отрисовка узлов
         ctx.beginPath();
-        ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
+        ctx.arc(node.x, node.y, node.radius * 1.1, 0, Math.PI * 2);
         ctx.fillStyle = 'rgba(100, 200, 255, 0.8)';
         ctx.fill();
     });
@@ -121,8 +121,8 @@ function animate() {
                 ctx.beginPath();
                 ctx.moveTo(nodes[i].x, nodes[i].y);
                 ctx.lineTo(nodes[j].x, nodes[j].y);
-                ctx.strokeStyle = `rgba(100, 200, 255, ${0.3 * (1 - distance / 250)})`; // Соответственно изменили прозрачность
-                ctx.lineWidth = 0.3;
+                ctx.strokeStyle = `rgba(50, 150, 255, ${0.3 * (1 - distance / 250)})`; // Соответственно изменили прозрачность
+                ctx.lineWidth = 0.6;
                 ctx.stroke();
             }
         }
