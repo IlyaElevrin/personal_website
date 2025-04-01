@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Книги | Ilya Chugynov</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/cvg" href="avatar.jpg">
+</head>
+<body>
+    <!-- Навбар (копия из index.html) -->
+    <nav class="navbar">
+        <div class="navbar-content">
+            <a href="index.html" class="avatar">
+                <img src="avatar.jpg" alt="Аватар">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="about.html">Обо мне</a></li>
+                <li><a href="experience.html">Опыт</a></li>
+                <li><a href="books.html">Книги</a></li>
+                <li><a href="index.html#courses">Обучение</a></li>
+                <li><a href="index.html#projects">Проекты</a></li>
+                <li><a href="index.html#hobbies">Хобби</a></li>
+            </ul>
+            <div class="settings">
+                <select id="language-switcher">
+                    <option value="ru">Русский</option>
+                    <option value="en">English</option>
+                    <option value="el">Ελληνικά</option>
+                </select>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Контент страницы книг -->
+    <div class="content">
+        <div class="content-background">
+            <h1>Моя библиотека</h1>
+            <div id="books-container" class="books-grid"></div>
+            
+            <div class="network-visualization">
+                <h2>Связи по категориям</h2>
+                <canvas id="booksCanvas"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <canvas id="neuralCanvas"></canvas>
+    
+    <!-- Подключаем скрипты -->
+    <script src="script.js"></script>
+    <script src="script/books.js"></script>
+</body>
+</html>

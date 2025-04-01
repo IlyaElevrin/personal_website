@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обо мне | Ilya Chugynov</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/cvg" href="avatar.jpg">
+</head>
+<body>
+    <!-- Навбар -->
+    <nav class="navbar">
+        <div class="navbar-content">
+            <a href="index.html" class="avatar">
+                <img src="avatar.jpg" alt="Аватар">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="about.html">Обо мне</a></li>
+                <li><a href="experience.html">Опыт</a></li>
+                <li><a href="books.html">Книги</a></li>
+                <li><a href="index.html#courses">Обучение</a></li>
+                <li><a href="index.html#projects">Проекты</a></li>
+                <li><a href="index.html#hobbies">Хобби</a></li>
+            </ul>
+            <div class="settings">
+                <select id="language-switcher">
+                    <option value="ru">Русский</option>
+                    <option value="en">English</option>
+                    <option value="el">Ελληνικά</option>
+                </select>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Контент страницы -->
+    <div class="content">
+        <div class="content-background">
+            <section class="about-section">
+                <h1>Обо мне</h1>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <h2>Привет, я Илья Чугунов</h2>
+                        <p>Я веб-разработчик с passion к созданию красивых и функциональных интерфейсов. Имею опыт работы с современными технологиями включая HTML5, CSS3, JavaScript и различными фреймворками.</p>
+                        <p>Мой путь в IT начался в 2015 году, и с тех пор я постоянно совершенствую свои навыки. Люблю сложные задачи, которые заставляют меня выходить за пределы комфортной зоны.</p>
+                        <p>В свободное время увлекаюсь чтением профессиональной литературы, изучением новых технологий и путешествиями.</p>
+                    </div>
+                    <div class="skills-section">
+                        <h2>Мои навыки</h2>
+                        <div class="skills-container">
+                            <div class="skill-item">
+                                <div class="skill-name">HTML/CSS</div>
+                                <div class="skill-bar" style="--skill-level: 90%"></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">JavaScript</div>
+                                <div class="skill-bar" style="--skill-level: 75%"></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">React</div>
+                                <div class="skill-bar" style="--skill-level: 65%"></div>
+                            </div>
+                        </div>
+
+                        <h2>Языки</h2>
+                        <div class="skills-container">
+                            <div class="skill-item">
+                                <div class="skill-name">Русский</div>
+                                <div class="skill-bar" style="--skill-level: 100%"></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">Английский</div>
+                                <div class="skill-bar" style="--skill-level: 50%"></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">Греческий</div>
+                                <div class="skill-bar" style="--skill-level: 20%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <canvas id="neuralCanvas"></canvas>
+    
+    <!-- Подключаем скрипты -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -4,14 +4,19 @@ languageSwitcher.addEventListener('change', function () {
     alert('Язык изменен на: ' + this.value);
 });
 
-// Плавная прокрутка к секциям
+// Плавная прокрутка к секциям (только для якорных ссылок)
 document.querySelectorAll('.nav-links a').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
         const targetId = this.getAttribute('href');
-        document.querySelector(targetId).scrollIntoView({
-            behavior: 'smooth'
-        });
+        
+        // Проверяем, является ли ссылка якорной (начинается с #)
+        if (targetId.startsWith('#')) {
+            e.preventDefault();
+            document.querySelector(targetId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+        // Для внешних ссылок (например, index.html, books.html) оставляем стандартное поведение
     });
 });
 
