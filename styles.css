@@ -592,3 +592,71 @@ h1 {
         width: 100%;
     }
 }
+
+/* Стили для страницы хобби */
+.hobbies-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.hobby-card {
+    background: rgba(68, 68, 68, 0.7);
+    border-radius: 12px;
+    padding: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.hobby-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.1);
+}
+
+.hobby-content h3 {
+    margin: 0 0 10px 0;
+    color: #fff;
+    font-size: 1.5em;
+}
+
+.hobby-description {
+    color: #aaa;
+    margin: 0 0 20px 0;
+    line-height: 1.5;
+}
+
+.hobby-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.hobby-link {
+    background: rgba(0, 123, 255, 0.2);
+    color: #007BFF;
+    padding: 8px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.9em;
+    transition: all 0.3s;
+    border: 1px solid rgba(0, 123, 255, 0.3);
+}
+
+.hobby-link:hover {
+    background: rgba(0, 123, 255, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+    .hobby-links {
+        flex-direction: column;
+    }
+    
+    .hobby-link {
+        width: 100%;
+        text-align: center;
+    }
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Хобби | Ilya Chugynov</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/cvg" href="avatar.jpg">
+</head>
+<body>
+    <!-- Навбар -->
+    <nav class="navbar">
+        <div class="navbar-content">
+            <a href="index.html" class="avatar">
+                <img src="avatar.jpg" alt="Аватар">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="about.html">Обо мне</a></li>
+                <li><a href="experience.html">Опыт</a></li>
+                <li><a href="books.html">Книги</a></li>
+                <li><a href="education.html">Обучение</a></li>
+                <li><a href="projects.html">Проекты</a></li>
+                <li><a href="hobbies.html">Хобби</a></li>
+            </ul>
+            <div class="settings">
+                <select id="language-switcher">
+                    <option value="ru">Русский</option>
+                    <option value="en">English</option>
+                    <option value="el">Ελληνικά</option>
+                </select>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Контент страницы хобби -->
+    <div class="content">
+        <div class="content-background">
+            <h1>Мои хобби</h1>
+            <div id="hobbies-container" class="hobbies-list"></div>
+        </div>
+    </div>
+
+    <canvas id="neuralCanvas"></canvas>
+    
+    <!-- Подключаем скрипты -->
+    <script src="script.js"></script>
+    <script src="script/hobbies.js"></script>
+</body>
+</html>
