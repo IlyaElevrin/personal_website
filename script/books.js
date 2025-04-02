@@ -22,6 +22,22 @@ const booksData = {
   ]
 };
 
+// Функция для предварительной загрузки изображений
+function loadImage(src) {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    img.src = src;
+    img.onload = () => resolve(img);
+    img.onerror = () => {
+      console.error(`Ошибка загрузки изображения: ${src}`);
+      // Создаем заглушку для изображения
+      const fallbackImg = new Image();
+      fallbackImg.src = 'img/default_book.jpg'; // Убедитесь, что этот путь корректен
+      resolve(fallbackImg);
+    };
+  });
+}
+
 // Отрисовка списка книг
 function renderBooks(books) {
   const container = document.getElementById('books-container');
@@ -47,7 +63,7 @@ function renderBooks(books) {
 }
 
 // Фиксированная визуализация нейронной сети для книг
-function initBooksNetwork(books) {
+async function initBooksNetwork(books) {
   const canvas = document.getElementById('booksCanvas');
   if (!canvas) return;
 
@@ -93,6 +109,9 @@ function initBooksNetwork(books) {
   });
 
   // Добавляем книги и размещаем их между категориями
+  const bookImages = {};
+  const imageLoadPromises = [];
+
   books.forEach((book, bookIndex) => {
     // Вычисляем среднюю позицию между категориями книги
     let sumX = 0;
@@ -112,7 +131,7 @@ function initBooksNetwork(books) {
     const offsetX = offsetDirection * 60;
     const offsetY = offsetDirection * 60;
     
-    nodes.push({
+    const bookNode = {
       id: book.title,
       type: 'book',
       x: avgX + offsetX,
@@ -120,8 +139,19 @@ function initBooksNetwork(books) {
       radius: 15,
       cover: book.cover,
       categories: book.categories
-    });
+    };
+    nodes.push(bookNode);
+
+    // Предварительно загружаем изображения
+    imageLoadPromises.push(
+      loadImage(book.cover).then(img => {
+        bookImages[book.title] = img;
+      })
+    );
   });
+
+  // Ждем загрузки всех изображений
+  await Promise.all(imageLoadPromises);
 
   // Отрисовка
   function draw() {
@@ -160,9 +190,16 @@ function initBooksNetwork(books) {
         ctx.fillText(node.id, node.x, node.y + 25);
       } else {
         // Книги (обложки)
-        const img = new Image();
-        img.src = node.cover;
-        img.onerror = function() {
+        const img = bookImages[node.id];
+        if (img) {
+          ctx.save();
+          ctx.beginPath();
+          ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
+          ctx.closePath();
+          ctx.clip();
+          ctx.drawImage(img, node.x - node.radius, node.y - node.radius, node.radius * 2, node.radius * 2);
+          ctx.restore();
+        } else {
           // Запасной вариант если изображение не загрузилось
           ctx.beginPath();
           ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
@@ -172,14 +209,7 @@ function initBooksNetwork(books) {
           ctx.font = '10px Arial';
           ctx.textAlign = 'center';
           ctx.fillText(node.id.substring(0, 3), node.x, node.y + 3);
-        };
-        ctx.save();
-        ctx.beginPath();
-        ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
-        ctx.closePath();
-        ctx.clip();
-        ctx.drawImage(img, node.x - node.radius, node.y - node.radius, node.radius * 2, node.radius * 2);
-        ctx.restore();
+        }
       }
     });
   }
@@ -194,7 +224,7 @@ function initBooksNetwork(books) {
 }
 
 // Инициализация при загрузке страницы
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
   renderBooks(booksData.books);
-  initBooksNetwork(booksData.books);
+  await initBooksNetwork(booksData.books);
 });
