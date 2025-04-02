@@ -137,3 +137,56 @@ function animate() {
 }
 
 animate();
+
+
+function showStarAnimation() {
+    if (!sessionStorage.getItem('animationShown')) {
+        const overlay = document.createElement('div');
+        overlay.className = 'star-overlay';
+        
+        const container = document.createElement('div');
+        container.className = 'star-container';
+        
+        // Создаем 150 звёзд (можно регулировать количество)
+        const starCount = 150;
+        const stars = [];
+        
+        for (let i = 0; i < starCount; i++) {
+            const star = document.createElement('div');
+            
+            // Случайный размер звезды
+            const sizeClass = ['star-small', 'star-medium', 'star-large'][Math.floor(Math.random() * 3)];
+            star.className = `star ${sizeClass}`;
+            
+            // Случайная позиция
+            star.style.left = `${Math.random() * 100}%`;
+            star.style.top = `${Math.random() * 100}%`;
+            
+            // Случайная задержка появления (0-2 сек)
+            star.style.setProperty('--delay', `${Math.random() * 2}s`);
+            
+            // Случайная задержка мерцания
+            star.style.animationDelay = `${Math.random() * 2}s, ${Math.random() * 0.5}s`;
+            
+            container.appendChild(star);
+        }
+        
+        overlay.appendChild(container);
+        document.body.prepend(overlay);
+        
+        // Плавное угасание звёзд вместе с размытием
+        setTimeout(() => {
+            // Добавляем класс для анимации угасания
+            overlay.classList.add('fade-out');
+            
+            // Удаляем overlay после завершения анимации
+            setTimeout(() => {
+                overlay.remove();
+            }, 2000); // Длительность анимации угасания
+        }, 3000); // Задержка перед началом угасания
+        
+        sessionStorage.setItem('animationShown', 'true');
+    }
+}
+
+document.addEventListener('DOMContentLoaded', showStarAnimation);

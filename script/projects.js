@@ -4,7 +4,7 @@ const projectsData = {
       {
         "title": "Нейросеть для анализа текста",
         "description": "Проект по обработке естественного языка с использованием TensorFlow и Python",
-        "cover": "script/img/projects/nlp.jpg",
+        "cover": "script/img/books/data analytics excel.jpg",
         "github": "https://github.com/example/text-analysis",
         "tags": ["AI", "Python", "NLP"]
       },

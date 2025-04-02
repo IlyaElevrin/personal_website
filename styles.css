@@ -660,3 +660,109 @@ h1 {
         text-align: center;
     }
 }
+
+/* Анимация звёзд */
+@keyframes twinkle {
+    0%, 100% { opacity: 0.2; transform: scale(0.8); }
+    50% { opacity: 1; transform: scale(1.1); }
+  }
+  
+  @keyframes starEntry {
+    0% { transform: translateY(20px) scale(0); opacity: 0; }
+    100% { transform: translateY(0) scale(1); opacity: 1; }
+  }
+  
+  @keyframes unblur {
+    0% { backdrop-filter: blur(20px); }
+    100% { backdrop-filter: blur(0); }
+  }
+  
+  .star-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(20px);
+    animation: unblur 2s ease-out 3s forwards;
+  }
+  
+  .star-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .star {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    animation: 
+      starEntry 0.8s cubic-bezier(0.2, 0.8, 0.4, 1) forwards,
+      twinkle 2s ease-in-out infinite;
+    animation-delay: var(--delay);
+    box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.8);
+  }
+  
+  .star::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    background: radial-gradient(circle, white, transparent 70%);
+    border-radius: 50%;
+    opacity: 0.5;
+    z-index: -1;
+  }
+  
+  .star-large {
+    width: 6px;
+    height: 6px;
+    background: linear-gradient(135deg, #fff, #aaf);
+  }
+  
+  .star-medium {
+    width: 4px;
+    height: 4px;
+  }
+  
+  .star-small {
+    width: 2px;
+    height: 2px;
+    animation-duration: 1.5s, 3s;
+  }
+
+/* Добавьте это в конец файла styles.css */
+.star-overlay.fade-out {
+    animation: fadeOut 2s ease-out forwards;
+}
+
+.star-overlay.fade-out .star {
+    animation: 
+        starEntry 0.8s cubic-bezier(0.2, 0.8, 0.4, 1) forwards,
+        twinkle 2s ease-in-out infinite,
+        fadeOutStar 2s ease-out forwards;
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; backdrop-filter: blur(20px); }
+    100% { opacity: 0; backdrop-filter: blur(0); }
+}
+
+@keyframes fadeOutStar {
+    0% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(0.5); }
+}
+
+/* Обновите существующую анимацию unblur */
+@keyframes unblur {
+    0% { backdrop-filter: blur(20px); }
+    100% { backdrop-filter: blur(0); }
+}
